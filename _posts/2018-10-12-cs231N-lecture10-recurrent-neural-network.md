@@ -6,6 +6,7 @@ date:       2018-10-12
 author:     ZYC
 header-img: img/post-bg-ios9-web.jpg
 catalog: 	 true
+mathjax:     true
 tags:
     - deeplearning
 ---
@@ -179,7 +180,16 @@ while True:
     n += 1 # iteration counter， 循环次数
 ```
 
+### CNN+RNN
 $ 将一张图片放入CNN网络中，整个模型由两个模块组成：卷积神经网络负责处理图像，RNN网络负责建立序列模型。$
 
 ![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_001.png)
+
+$
+去掉了卷积神经网络的 FC-1000 和 softmax, 将输出记为V。
+y向量中的维数等于你的单词表中的单词数+1,+1指的是特别的结束标志。
+$
+
 ![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_002.png)
+
+![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_006.png)
