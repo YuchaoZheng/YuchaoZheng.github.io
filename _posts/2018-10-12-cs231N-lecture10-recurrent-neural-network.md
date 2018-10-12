@@ -13,7 +13,7 @@ tags:
 
 ## RNN
 
-$每一步都使用相同的f函数和参数集。$
+$ 每一步都使用相同的f函数和参数集。 $
 
 ![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_004.png)
 
@@ -27,30 +27,26 @@ $每一步都使用相同的f函数和参数集。$
 
 
 
-$图片解释:第t层 hidden layer  -> h_t, 第t层 input layer -> x_t ,W_{hh} 和 W_{xh} 第一维长度不一定相同，第二维长度相同。$
+$ 图片解释:第t层 hidden layer  -> h_t, 第t层 input layer -> x_t ,W_{hh} 和 W_{xh} 第一维长度不一定相同，第二维长度相同。$
 
 ![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_003.png)
 
 $图片解释: loss 的计算： 计算每个层的loss，最后都相加起来成为最终的loss。$
 
 
-###min-char-rnn
+### min-char-rnn
 
 [github链接](https://gist.github.com/karpathy/d4dee566867f8291f086)
 
 
-$
-如果直接是全局在计算的话，会发现显存或内存不够，而且会计算的十分的久，因为训练集是十分巨大的。那么有什么办法呢？truncated，也就是分块计算，因为我们的sequence输入是有个时间顺序的，假设我们设置一个chunk是100，那么我们跑了100个字母，后计算这100个的backpropagation，然后再跑100，现在有了200了，但是我们计算的是后100的backpropagation，如此反复。
-这便是seq_length的含义
-$
+$ 如果直接是全局在计算的话，会发现显存或内存不够，而且会计算的十分的久，因为训练集是十分巨大的。那么有什么办法呢？truncated，也就是分块计算，因为我们的sequence输入是有个时间顺序的，假设我们设置一个chunk是100，那么我们跑了100个字母，后计算这100个的backpropagation，然后再跑100，现在有了200了，但是我们计算的是后100的backpropagation，如此反复。
+这便是seq_length的含义。$
 
 ![](https://image-static.segmentfault.com/284/258/2842583697-59a25f945b87d_articlex)
 ![](https://image-static.segmentfault.com/388/781/3887812354-59a25fb0ba421_articlex)
 
-$
-代码解释:
-给RNN输入巨量的文本，然后让其建模并根据一个序列中的前一个字母，给出下一个字母的概率分布,len(h_t)=vocabSize,len(x_t) = hiddenSize
-$
+$ 代码解释:
+给RNN输入巨量的文本，然后让其建模并根据一个序列中的前一个字母，给出下一个字母的概率分布,len(h_t)=vocabSize,len(x_t) = hiddenSize。 $
 ``` python
 """
 Minimal character-level Vanilla RNN model. Written by Andrej Karpathy (@karpathy)
