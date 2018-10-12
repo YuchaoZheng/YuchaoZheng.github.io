@@ -16,14 +16,14 @@ tags:
 
 $ 每一步都使用相同的f函数和参数集。 $
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_004.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/004.jpg)
 
 ![](https://image-static.segmentfault.com/125/776/125776280-59a18b6104158_articlex)
 
 ![tanh函数](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539273171027&di=35c5e9c26eaf8fec2fdaefaa07314496&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D815988976%2C480779916%26fm%3D214%26gp%3D0.jpg)
 
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_005.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res//005.jpg)
 
 
 
@@ -32,7 +32,7 @@ $ 图片解释:第t层 hidden layer  -> h_t, 第t层 input layer -> x_t $
 
 $W_{hh} 和 W_{xh} 第一维长度不一定相同，第二维长度相同。$
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_003.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/003.jpg)
 
 $图片解释: loss 的计算： 计算每个层的loss，最后都相加起来成为最终的loss。$
 
@@ -191,14 +191,14 @@ while True:
 $ 将一张图片放入CNN网络中，整个模型由两个模块组成：$
 $卷积神经网络负责处理图像，RNN网络负责建立序列模型。$
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_001.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/001.jpg)
 
 $去掉了卷积神经网络的 FC-1000 和 softmax, 将输出记为V。$
 $y向量中的维数等于你的单词表中的单词数+1,+1指的是特别的结束标志。$
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_002.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/002.jpg)
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_006.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/006.jpg)
 
 ### LSTM
 
@@ -238,13 +238,13 @@ $
 隐藏层参数h更新是以挤压细胞(C_{t})的形式进行，经过o参数调整只有一部分细胞进入隐含状态
 $
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_009.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/009.jpg)
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_011.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/011.jpg)
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_12.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/012.jpg)
 
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_013.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/013.jpg)
 
 ### rnn 梯度消失问题
-![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_014.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/014.jpg)
