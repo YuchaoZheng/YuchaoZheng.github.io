@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      cs231N lecture10 recurrent neural network
+title:      cs231N
 subtitle:   lecture10 recurrent neural network
 date:       2018-10-12
 author:     ZYC
 header-img: img/post-bg-ios9-web.jpg
 catalog: 	 true
 tags:
-    - deeplearing
+    - deeplearning
 ---
 # cs231N lecture10 recurrent neural network
 
