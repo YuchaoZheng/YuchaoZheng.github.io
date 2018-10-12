@@ -16,21 +16,23 @@ tags:
 
 $ 每一步都使用相同的f函数和参数集。 $
 
-![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_004.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_004.png)
 
 ![](https://image-static.segmentfault.com/125/776/125776280-59a18b6104158_articlex)
 
 ![tanh函数](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539273171027&di=35c5e9c26eaf8fec2fdaefaa07314496&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D815988976%2C480779916%26fm%3D214%26gp%3D0.jpg)
 
 
-![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_005.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_005.png)
 
 
 
 
-$ 图片解释:第t层 hidden layer  -> h_t, 第t层 input layer -> x_t ,W_{hh} 和 W_{xh} 第一维长度不一定相同，第二维长度相同。$
+$ 图片解释:第t层 hidden layer  -> h_t, 第t层 input layer -> x_t $
 
-![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_003.png)
+$W_{hh} 和 W_{xh} 第一维长度不一定相同，第二维长度相同。$
+
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_003.png)
 
 $图片解释: loss 的计算： 计算每个层的loss，最后都相加起来成为最终的loss。$
 
@@ -183,13 +185,63 @@ while True:
 ### CNN+RNN
 $ 将一张图片放入CNN网络中，整个模型由两个模块组成：卷积神经网络负责处理图像，RNN网络负责建立序列模型。$
 
-![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_001.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_001.png)
 
 $
 去掉了卷积神经网络的 FC-1000 和 softmax, 将输出记为V。
 y向量中的维数等于你的单词表中的单词数+1,+1指的是特别的结束标志。
 $
 
-![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_002.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_002.png)
 
-![](file:///home/yuchao/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_006.png)
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_006.png)
+
+### LSTM
+
+[参考链接](https://www.jianshu.com/p/9dc9f41f0b29)
+
+$Long Short Term 网络,一般就叫做 LSTM ,是一种 RNN 特殊的类型，可以学习长期依赖信息$
+
+$所有 RNN 都具有一种重复神经网络模块的链式的形式。在标准的 RNN 中，这个重复的模块只有一个非常简单的结构，例如一个 tanh 层。$
+
+![](https://upload-images.jianshu.io/upload_images/42741-9ac355076444b66f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+$
+LSTM 同样是这样的结构，但是重复的模块拥有一个不同的结构。不同于 单一神经网络层，这里是有四个，以一种非常特殊的方式进行交互。
+$
+
+![](https://upload-images.jianshu.io/upload_images/42741-b9a16a53d58ca2b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+![](https://upload-images.jianshu.io/upload_images/42741-ac1eb618f37a9dea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+![](https://upload-images.jianshu.io/upload_images/42741-96b387f711d1d12c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+![](https://upload-images.jianshu.io/upload_images/42741-7fa07e640593f930.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+![](https://upload-images.jianshu.io/upload_images/42741-d88caa3c4faf5353.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+![](https://upload-images.jianshu.io/upload_images/42741-4c9186bf786063d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+$
+i,f,o想象成二进制，不是0,就是1。
+$
+$
+f被称为忘记门，通常把一些细胞状态置0。
+$
+$
+i在0-1之间，g在-1到1之间，给C_{t}加上一个-1到1之间的值，乘以i是为了使函数更加复杂
+$
+$
+隐藏层参数h更新是以挤压细胞(C_{t})的形式进行，经过o参数调整只有一部分细胞进入隐含状态
+$
+
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_009.png)
+
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_011.png)
+
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_12.png)
+
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_013.png)
+
+### rnn 梯度消失问题
+![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_014.png)
