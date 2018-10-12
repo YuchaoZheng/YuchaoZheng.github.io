@@ -42,14 +42,19 @@ $图片解释: loss 的计算： 计算每个层的loss，最后都相加起来�
 [github链接](https://gist.github.com/karpathy/d4dee566867f8291f086)
 
 
-$ 如果直接是全局在计算的话，会发现显存或内存不够，而且会计算的十分的久，因为训练集是十分巨大的。那么有什么办法呢？truncated，也就是分块计算，因为我们的sequence输入是有个时间顺序的，假设我们设置一个chunk是100，那么我们跑了100个字母，后计算这100个的backpropagation，然后再跑100，现在有了200了，但是我们计算的是后100的backpropagation，如此反复。
-这便是seq_length的含义。$
+$ 如果直接是全局在计算的话，会发现显存或内存不够，而且会计算的十分的久，因为训练集是十$
+$分巨大的。那么有什么办法呢？truncated，也就是分块计算，因为我们的sequence输入是有个$
+$时间顺序的，假设我们设置一个chunk是100，那么我们跑了100个字母，后计算这100个的bac
+$
+$kpropagation，然后再跑100，现在有了200了，但是我们计算的是后100的backpropagation$
+$，如此反复。这便是seq_length的含义。$
 
 ![](https://image-static.segmentfault.com/284/258/2842583697-59a25f945b87d_articlex)
 ![](https://image-static.segmentfault.com/388/781/3887812354-59a25fb0ba421_articlex)
 
 $ 代码解释:
-给RNN输入巨量的文本，然后让其建模并根据一个序列中的前一个字母，给出下一个字母的概率分布,len(h_t)=vocabSize,len(x_t) = hiddenSize。 $
+给RNN输入巨量的文本，然后让其建模并根据一个序列中的前一个字母，给出下一$
+$个字母的概率分布。$
 ``` python
 """
 Minimal character-level Vanilla RNN model. Written by Andrej Karpathy (@karpathy)
@@ -183,14 +188,13 @@ while True:
 ```
 
 ### CNN+RNN
-$ 将一张图片放入CNN网络中，整个模型由两个模块组成：卷积神经网络负责处理图像，RNN网络负责建立序列模型。$
+$ 将一张图片放入CNN网络中，整个模型由两个模块组成：$
+$卷积神经网络负责处理图像，RNN网络负责建立序列模型。$
 
 ![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_001.png)
 
-$
-去掉了卷积神经网络的 FC-1000 和 softmax, 将输出记为V。
-y向量中的维数等于你的单词表中的单词数+1,+1指的是特别的结束标志。
-$
+$去掉了卷积神经网络的 FC-1000 和 softmax, 将输出记为V。$
+$y向量中的维数等于你的单词表中的单词数+1,+1指的是特别的结束标志。$
 
 ![](https://github.com/YuchaoZheng/MarkdownPhotos/blob/master/Res/%E9%80%89%E5%8C%BA_002.png)
 
@@ -202,17 +206,16 @@ $
 
 $Long Short Term 网络,一般就叫做 LSTM ,是一种 RNN 特殊的类型，可以学习长期依赖信息$
 
-$所有 RNN 都具有一种重复神经网络模块的链式的形式。在标准的 RNN 中，这个重复的模块只有一个非常简单的结构，例如一个 tanh 层。$
+$所有RNN都具有一种重复神经网络模块的链式的形式。在标准的RNN中，$
+$这个重复的模块只有一个非常简单的结构，例如一个 tanh 层。$
 
 ![](https://upload-images.jianshu.io/upload_images/42741-9ac355076444b66f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
 
 $
-LSTM 同样是这样的结构，但是重复的模块拥有一个不同的结构。不同于 单一神经网络层，这里是有四个，以一种非常特殊的方式进行交互。
-$
+LSTM 同样是这样的结构，但是重复的模块拥有一个不同的结构。$
+$不同于单一神经网络层，这里是有四个，以一种非常特殊的方式进行交互。$
 
 ![](https://upload-images.jianshu.io/upload_images/42741-b9a16a53d58ca2b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
-
-![](https://upload-images.jianshu.io/upload_images/42741-ac1eb618f37a9dea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
 
 ![](https://upload-images.jianshu.io/upload_images/42741-96b387f711d1d12c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
 
