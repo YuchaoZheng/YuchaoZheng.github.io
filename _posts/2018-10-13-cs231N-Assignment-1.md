@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      cs231N
+subtitle:   lecture10 recurrent neural network
+date:       2018-10-12
+author:     ZYC
+header-img: img/post-bg-ios9-web.jpg
+catalog: 	 true
+mathjax:     true
+tags:
+    - deeplearning
+---
+
 # Assignment #1: Image Classification, kNN, SVM, Softmax, Neural Network
 
 ## Image Classification: Data-driven Approach, k-Nearest Neighbor, train/val/test splits
